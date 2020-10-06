@@ -1,4 +1,4 @@
-# Lab7
+# Lab8
 ## Integrantes
 * Alayon Molina Juan
 * Castro Ortega Jose
