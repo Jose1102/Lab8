@@ -7,14 +7,18 @@ import edu.eci.cvds.samples.entities.ItemRentado;
 
 public interface ClienteDAO {
 	
-	public void save(Cliente cl) throws PersistenceException;
-	
-	public Cliente load(int documento) throws PersistenceException;
+	public void save(Cliente cliente) throws PersistenceException;
 	
 	public List<Cliente> consultarClientes() throws PersistenceException;
 	
-	public List<ItemRentado> loadItems(long idcliente) throws PersistenceException;
+	public Cliente load(long documento)  throws PersistenceException;
+	
+	public List<ItemRentado> loadItems(long IDCliente) throws PersistenceException;
 
-	public void vetarCliente(long docu, boolean estado) throws PersistenceException;
+	public void vetarCliente(long Documento, boolean Estado) throws PersistenceException;
+	
+	
+	
+	
 
 }

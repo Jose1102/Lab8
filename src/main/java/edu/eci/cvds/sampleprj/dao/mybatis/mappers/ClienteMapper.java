@@ -34,14 +34,14 @@ public interface ClienteMapper {
      */
     public List<Cliente> consultarClientes();
     
-    /*
-    public void insertarCliente(@Param("cl")Cliente cl);
     
-    public Cliente consultarCliente(@Param("idcli")long documento);
+    public void insertarCliente(@Param("cliente")Cliente cliente);
+    
+    public Cliente consultarCliente(@Param("documentoCliente")long documento);
     
     public List<ItemRentado> consultarItems(@Param("it" )long idcliente);
 
     public void vetarCliente(@Param("docu") long docu, @Param("estado") boolean estado);
-    */
+    
     
 }

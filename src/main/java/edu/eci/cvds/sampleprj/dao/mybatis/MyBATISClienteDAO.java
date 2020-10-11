@@ -5,7 +5,7 @@ import com.google.inject.Singleton;
 import edu.eci.cvds.sampleprj.dao.ClienteDAO;
 import edu.eci.cvds.sampleprj.dao.ItemDAO;
 import edu.eci.cvds.sampleprj.dao.PersistenceException;
-//import excepciones.PersistenceException;
+
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.Cliente;
@@ -22,28 +22,9 @@ public class MyBATISClienteDAO implements ClienteDAO {
 	@Inject
 	  private ClienteMapper clienteMapper;
 	
-	/*
-	@Override
-	public void save(Cliente cl) throws PersistenceException{
-	  try{
-	      clienteMapper.insertarCliente(cl);
-	  }
-	  catch(org.apache.ibatis.exceptions.PersistenceException e){
-	      throw new PersistenceException("Error al registrar el cliente "+cl.toString(),e);
-	  }        
+	
 
-	  }
-	  */
-
-	  @Override
-	  public Cliente load(int documento) throws PersistenceException {
-	  try{
-	      return clienteMapper.consultarCliente(documento);
-	  }
-	  catch(org.apache.ibatis.exceptions.PersistenceException e){
-	      throw new PersistenceException("Error al consultar el cliente "+documento,e);
-	  }
-	  }
+	
 	  
 	  
 	  @Override
@@ -58,43 +39,48 @@ public class MyBATISClienteDAO implements ClienteDAO {
 
 	@Override
 	public void save(Cliente cl) throws PersistenceException {
-		// TODO Auto-generated method stub
+		  try{
+		      clienteMapper.insertarCliente(cl);
+		  }
+		  catch(org.apache.ibatis.exceptions.PersistenceException e){
+		      throw new PersistenceException("Error al registrar el cliente "+cl.toString(),e);
+		  }  
 		
 	}
 
 
 	@Override
-	public List<ItemRentado> loadItems(long idcliente) throws PersistenceException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ItemRentado> loadItems(long idCliente) throws PersistenceException {
+		try{
+			return clienteMapper.consultarItems(idCliente);
+		}catch(org.apache.ibatis.exceptions.PersistenceException e){
+			throw new PersistenceException("Error al consultar el cliente "+idCliente,e);
+		}
 	}
 
-
+	@Transactional
 	@Override
-	public void vetarCliente(long docu, boolean estado) throws PersistenceException {
-		// TODO Auto-generated method stub
+	public void vetarCliente(long documento, boolean estado) throws PersistenceException {
+		try{
+			clienteMapper.vetarCliente(documento, estado);
+		}catch(org.apache.ibatis.exceptions.PersistenceException e){
+			throw new PersistenceException("Error al vetar Cliente "+documento,e);
+		}
 		
 	}
+
+
+	  @Override
+	  public Cliente load(long documento) throws PersistenceException {
+	  try{
+	      return clienteMapper.consultarCliente(documento);
+	  }
+	  catch(org.apache.ibatis.exceptions.PersistenceException e){
+	      throw new PersistenceException("Error al consultar el cliente "+documento,e);
+	  }
+	  }
 		
-		/*
-		@Override
-		public List<ItemRentado> loadItems(long idcliente) throws PersistenceException{
-			try{
-				return clienteMapper.consultarItems(idcliente);
-			}catch(org.apache.ibatis.exceptions.PersistenceException e){
-				throw new PersistenceException("Error al consultar el cliente "+idcliente,e);
-			}
-		}
 
-		@Transactional
-		@Override
-		public void vetarCliente(long docu, boolean estado) throws PersistenceException {
-			try{
-				clienteMapper.vetarCliente(docu, estado);
-			}catch(org.apache.ibatis.exceptions.PersistenceException e){
-				throw new PersistenceException("Error al vetar Cliente "+docu,e);
-			}
-		*/
 
-		}
+}
 
