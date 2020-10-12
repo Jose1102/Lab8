@@ -16,26 +16,8 @@ public class MyBATISItemRentadoDAO implements ItemRentadoDAO{
 	
 	@Inject
 	private ItemRentadoMapper itemRentadoMapper;
-
-	@Override
-	public ItemRentado load(int id) throws PersistenceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void save(long docu, int itemId, Date fechaIni, Date fechaFin) throws PersistenceException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<ItemRentado> consultarItemsSinDevolver(long documento) throws PersistenceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
-	/*
+	
 	@Override
 	public ItemRentado load(int id) throws PersistenceException{
 		try{
@@ -65,5 +47,5 @@ public class MyBATISItemRentadoDAO implements ItemRentadoDAO{
 		}
 	}
 
-	*/
+	
 }

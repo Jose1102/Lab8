@@ -9,12 +9,12 @@ import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.entities.TipoItem;
 
 public interface ItemRentadoMapper {
-	/*
+	
 	public ItemRentado getItemRentado(@Param ("ir")int id);
     
-	public void insertItemRentado(@Param ("docu")long docu,@Param ("itemId")int itemId,@Param ("fechaIni")Date fechaIni,@Param ("fechaFin")Date fechaFin);
+	public void insertItemRentado(@Param ("documento")long docu,@Param ("itemId")int itemId,@Param ("fechaInicio")Date fechaIni,@Param ("fechaFin")Date fechaFin);
 
-	public List<ItemRentado> consultarItemsSinDevolver(@Param("docu") long documento);
-*/
+	public List<ItemRentado> consultarItemsSinDevolver(@Param("documento") long documento);
+
 
 }

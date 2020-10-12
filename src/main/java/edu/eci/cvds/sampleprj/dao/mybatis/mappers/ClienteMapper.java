@@ -12,8 +12,9 @@ import edu.eci.cvds.samples.entities.ItemRentado;
  * @author 2106913
  */
 public interface ClienteMapper {
+	 
+    public Cliente consultarCliente(@Param("documentoCliente")long documento);
 	
-	public Cliente consultarCliente(@Param("idcli") int id);
     
     /**
      * Registrar un nuevo item rentado asociado al cliente identificado
@@ -37,11 +38,10 @@ public interface ClienteMapper {
     
     public void insertarCliente(@Param("cliente")Cliente cliente);
     
-    public Cliente consultarCliente(@Param("documentoCliente")long documento);
-    
-    public List<ItemRentado> consultarItems(@Param("it" )long idcliente);
+    public List<ItemRentado> consultarItems(@Param("idcliente" )long idcliente);
 
-    public void vetarCliente(@Param("docu") long docu, @Param("estado") boolean estado);
+    public void vetarCliente(@Param("documento") long documento, 
+    		@Param("estado") boolean estado);
     
     
 }

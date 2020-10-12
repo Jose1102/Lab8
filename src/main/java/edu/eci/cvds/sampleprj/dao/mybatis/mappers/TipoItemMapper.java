@@ -11,8 +11,13 @@ public interface TipoItemMapper {
     
     public List<TipoItem> getTiposItems();
     
-    public TipoItem getTipoItem(int id);
+    public TipoItem getTipoItem(@Param ("idti") int id);
     
-    public void addTipoItem(TipoItem a);
+    public void addTipoItem(@Param ("idtipo") TipoItem a);
+
+	public List<TipoItem> getTipoItem();
+
+	public void insertarTipoItem(@Param("tit")TipoItem tit);
+
 
 }
