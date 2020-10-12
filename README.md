@@ -3,6 +3,10 @@
 * Alayon Molina Juan
 * Castro Ortega Jose
 
+## Despliegue
+https://cvdslab8.herokuapp.com/faces/registrocliente.xhtml
+https://cvdslab8.herokuapp.com/faces/registroalquiler.xhtml
+
 ## Circle Ci
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/Jose1102/Lab8)
 
